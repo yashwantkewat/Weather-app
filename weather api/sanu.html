@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="sanu.css">
+  
+</head>
+<body>
+ <div class="container">
+    <h1>🌤️ Weather Forecast</h1>
+
+    <input type="text" id="cityInput" placeholder="Enter city name" />
+    <button onclick="getWeather()">Search</button>
+
+    <div id="weather-container" style="display: none;">
+      <div class="current-weather">
+        <h2 id="city-name"></h2>
+        <p id="date-time"></p>
+        <div class="temp-info">
+          <img id="current-icon" src="" alt="weather icon" />
+          <div>
+            <h3 id="temp"></h3>
+            <p id="condition"></p>
+          </div>
+        </div>
+        <p id="summary"></p>
+        <div id="extra-info" class="extra-info"></div>
+
+      </div>
+
+      <div class="forecast">
+        <div class="day" id="day1"></div>
+        <div class="day" id="day2"></div>
+        <div class="day" id="day3"></div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <script src="sanu.js"></script>
+</body>
+</html>
