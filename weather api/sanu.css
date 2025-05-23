@@ -1,88 +1,159 @@
-body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  background: linear-gradient(to top, #243B55, #141E30);
-  color: white;
-  display: flex;
-  justify-content: center;
-  padding: 40px;
-}
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-.container {
-  width: 100%;
-  max-width: 900px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  padding: 20px;
-}
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: #fff;
+      transition: background 0.3s;
+    }
 
-input {
-  padding: 10px;
-  width: 70%;
-  border: none;
-  border-radius: 5px;
-  margin-right: 10px;
-}
+    body.light-mode {
+      background: #f7f7f7;
+      color: #111;
+    }
 
-button {
-  padding: 10px 20px;
-  border: none;
-  background: #4FC3F7;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-}
+    header {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-.current-weather {
-  margin-top: 20px;
-  padding: 20px;
-  border-bottom: 1px solid #ddd;
-}
+    .navbar {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-.temp-info {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
+    .navbar h1 {
+      font-size: 24px;
+      color: #03a9f4;
+    }
 
-.temp-info img {
-  width: 64px;
-}
+    .navbar button {
+      background: transparent;
+      border: 2px solid #03a9f4;
+      color: #03a9f4;
+      padding: 6px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
 
-.forecast {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-  gap: 15px;
-}
+    .navbar button:hover {
+      background-color: #03a9f4;
+      color: white;
+    }
 
-.day {
-  flex: 1;
-  background: rgba(255,255,255,0.15);
-  color: rgb(10, 5, 5);
-  padding: 10px;
-  border-radius: 10px;
-  text-align: center;
-}
+    .hero {
+      text-align: center;
+      padding: 30px 10px;
+    }
 
+    .hero h2 {
+      font-size: 36px;
+    }
 
-.extra-info {
-  margin-top: 10px;
-  font-size: 14px;
-  line-height: 1.6;
-  color: #333;
-}
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 12px;
+    }
 
-.forecast .day {
-  border: 1px solid #ddd;
-  padding: 10px;
-  border-radius: 8px;
-  background-color: #f7f7f7;
-  margin: 5px;
-}
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+      justify-content: center;
+    }
 
+    input {
+      flex: 1;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      min-width: 200px;
+    }
 
-#weatherMap {
-  width: 100%;
-  margin-top: 20px;
-}
+    button {
+      padding: 10px 14px;
+      background: #03a9f4;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #0288d1;
+    }
+
+    .loader {
+      text-align: center;
+      font-size: 18px;
+      margin-top: 20px;
+    }
+
+    .current-weather {
+      margin-bottom: 20px;
+    }
+
+    .temp-info {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .temp-info img {
+      width: 70px;
+    }
+
+    .details p {
+      margin: 4px 0;
+    }
+
+    .forecast, .hourly-forecast {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .day, .hour {
+      flex: 1 1 30%;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+      color: #222;
+      background-color: #fff;
+    }
+
+    body.light-mode .day, body.light-mode .hour {
+      background-color: #eee;
+      color: #000;
+    }
+
+    @media (max-width: 600px) {
+      .temp-info {
+        flex-direction: column;
+      }
+
+      .navbar h1 {
+        font-size: 20px;
+      }
+
+      .day, .hour {
+        flex: 1 1 100%;
+      }
+    }
