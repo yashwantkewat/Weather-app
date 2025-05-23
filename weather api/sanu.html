@@ -1,41 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Weather App</title>
-  <link rel="stylesheet" href="sanu.css">
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advanced Weather App</title>
+  <link rel="stylesheet" href="sanu.css" />
 </head>
 <body>
- <div class="container">
-    <h1>🌤️ Weather Forecast</h1>
+   <header>
+    <div class="navbar">
+      <h1>🌤️ Weather Pro</h1>
+      <button id="toggleTheme">Toggle Theme</button>
+    </div>
+  </header>
 
-    <input type="text" id="cityInput" placeholder="Enter city name" />
-    <button onclick="getWeather()">Search</button>
+  <div class="hero">
+    <p>Search any city or use your location 📍</p>
+  </div>
+
+  <div class="container">
+    <div class="controls">
+      <input type="text" id="cityInput" placeholder="Enter city or country Name..." />
+      <button onclick="getWeather()">Search</button>
+      <button onclick="getLocation()"> My Location  </button>
+      <button id="toggleUnit">°C / °F</button>
+    </div>
+
+    <div id="loader" class="loader" style="display: none;">Loading...</div>
 
     <div id="weather-container" style="display: none;">
       <div class="current-weather">
         <h2 id="city-name"></h2>
         <p id="date-time"></p>
         <div class="temp-info">
-          <img id="current-icon" src="" alt="weather icon" />
+          <img id="current-icon" src="" alt="icon" />
           <div>
             <h3 id="temp"></h3>
             <p id="condition"></p>
           </div>
         </div>
-        <p id="summary"></p>
-        <div id="extra-info" class="extra-info"></div>
-
+        <div class="details">
+          <p><strong>Feels Like:</strong> <span id="feels-like"></span></p>
+          <p><strong>Humidity:</strong> <span id="humidity"></span></p>
+          <p><strong>Pressure:</strong> <span id="pressure"></span></p>
+          <p><strong>Visibility:</strong> <span id="visibility"></span></p>
+          <p><strong>Wind:</strong> <span id="wind"></span></p>
+          <p><strong>Sunrise:</strong> <span id="sunrise"></span> | <strong>Sunset:</strong> <span id="sunset"></span></p>
+        </div>
       </div>
 
+      <h3>Next 6 Hours Forecast</h3>
+      <div class="hourly-forecast" id="hourly"></div>
+
+      <h3>Next 3 Days Forecast</h3>
       <div class="forecast">
         <div class="day" id="day1"></div>
         <div class="day" id="day2"></div>
         <div class="day" id="day3"></div>
       </div>
     </div>
-
   </div>
 
 
